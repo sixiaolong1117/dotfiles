@@ -10,7 +10,7 @@ config-version = 2
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -236,3 +236,16 @@ run = ['move-node-to-workspace W', 'workspace W']
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = ['move-node-to-workspace C', 'workspace C']
+
+# 打开 Steam 自动放到工作区 S，并确保 Steam 的全部窗口都是浮动的
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+run = ['move-node-to-workspace S', 'layout floating']
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam.helper'
+run = ['move-node-to-workspace S', 'layout floating']
+
+# 打开 Github Desktop 自动放到工作区 G
+[[on-window-detected]]
+if.app-id = 'com.github.GitHubClient'
+run = ['move-node-to-workspace G']
