@@ -222,20 +222,20 @@ on-mode-changed = []
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
 
-# 打开 QQ 自动放到工作区 Q，切换到工作区 Q，并确保 QQ 的全部窗口都是浮动的
+# 打开 QQ 自动放到工作区 Q，并确保 QQ 的全部窗口都是浮动的
 [[on-window-detected]]
 if.app-id = 'com.tencent.qq'
-run = ['move-node-to-workspace Q', 'layout floating', 'workspace Q']
+run = ['move-node-to-workspace Q', 'layout floating']
 
-# 打开微信自动放到工作区 W，切换到工作区 W
+# 打开微信自动放到工作区 W
 [[on-window-detected]]
 if.app-id = 'com.tencent.xinWeChat'
-run = ['move-node-to-workspace W', 'workspace W']
+run = ['move-node-to-workspace W']
 
-# 打开新的 Chrome 窗口自动放到工作区 C，切换到工作区 C
+# 打开新的 Chrome 窗口自动放到工作区 C
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = ['move-node-to-workspace C', 'workspace C']
+run = ['move-node-to-workspace C']
 
 # 打开 Steam 自动放到工作区 S，并确保 Steam 的全部窗口都是浮动的
 [[on-window-detected]]
