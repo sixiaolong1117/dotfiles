@@ -1,6 +1,6 @@
 # Dotfiles
 
-个人使用的配置文件，包含 zsh、AeroSpace 和 WezTerm。
+个人使用的配置文件，包含 zsh、Powerlevel10k、AeroSpace 和 WezTerm。
 
 仓库里的配置文件使用不带点的可见文件名，方便在编辑器和文件管理器里浏览。实际使用时，再把它们链接到各个程序在用户目录下需要读取的隐藏配置路径。
 
@@ -9,6 +9,7 @@
 | 配置 | 仓库文件 | macOS 链接目标 | Linux 链接目标 |
 | --- | --- | --- | --- |
 | zsh | `zsh/zshrc` | `~/.zshrc` | `~/.zshrc` |
+| Powerlevel10k | `zsh/p10k.zsh` | `~/.p10k.zsh` | `~/.p10k.zsh` |
 | WezTerm | `wezterm/wezterm.lua` | `~/.wezterm.lua` | `~/.wezterm.lua` |
 | AeroSpace | `AeroSpace/aerospace.toml` | `~/.aerospace.toml` | 不适用 |
 

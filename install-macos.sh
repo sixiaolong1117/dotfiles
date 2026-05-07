@@ -25,6 +25,7 @@ link_file() {
 }
 
 link_file "$repo_dir/zsh/zshrc" "$HOME/.zshrc"
+link_file "$repo_dir/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 link_file "$repo_dir/wezterm/wezterm.lua" "$HOME/.wezterm.lua"
 link_file "$repo_dir/AeroSpace/aerospace.toml" "$HOME/.aerospace.toml"
 
