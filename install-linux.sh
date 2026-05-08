@@ -28,6 +28,7 @@ link_file "$repo_dir/zsh/zshrc" "$HOME/.zshrc"
 link_file "$repo_dir/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 link_file "$repo_dir/wezterm/wezterm.lua" "$HOME/.wezterm.lua"
 mkdir -p "$HOME/.config"
+link_file "$repo_dir/nvim" "$HOME/.config/nvim"
 link_file "$repo_dir/sway" "$HOME/.config/sway"
 
 printf 'Linux 配置链接完成。\n'

@@ -1,6 +1,6 @@
 # Dotfiles
 
-个人使用的配置文件，包含 zsh、Powerlevel10k、AeroSpace、Sway、WezTerm、Windows Terminal 和 Oh My Posh。
+个人使用的配置文件，包含 zsh、Powerlevel10k、NeoVim、AeroSpace、Sway、WezTerm、Windows Terminal 和 Oh My Posh。
 
 仓库里的配置文件使用不带点的可见文件名，方便在编辑器和文件管理器里浏览。实际使用时，再把它们链接到各个程序在用户目录下需要读取的隐藏配置路径。
 
@@ -11,6 +11,7 @@
 | zsh | `zsh/zshrc` | `~/.zshrc` | `~/.zshrc` | 不适用 |
 | Powerlevel10k | `zsh/p10k.zsh` | `~/.p10k.zsh` | `~/.p10k.zsh` | 不适用 |
 | WezTerm | `wezterm/wezterm.lua` | `~/.wezterm.lua` | `~/.wezterm.lua` | 不适用 |
+| NeoVim | `nvim/` | `~/.config/nvim` | `~/.config/nvim` | 不适用 |
 | AeroSpace | `AeroSpace/aerospace.toml` | `~/.aerospace.toml` | 不适用 | 不适用 |
 | Sway | `sway/` | 不适用 | `~/.config/sway` | 不适用 |
 | Windows Terminal | `WindowsTerminal/settings.json` | 不适用 | 不适用 | 手动配置 |
@@ -32,7 +33,7 @@
 ./install-linux.sh
 ```
 
-Linux 安装脚本会链接 zsh、Powerlevel10k、WezTerm 和 Sway 配置。Sway 配置会链接整个 `sway/` 目录到 `~/.config/sway`。
+Linux 安装脚本会链接 zsh、Powerlevel10k、WezTerm、NeoVim 和 Sway 配置。Sway 配置会链接整个 `sway/` 目录到 `~/.config/sway`。
 
 Sway 配置包含一个自动缩放脚本：当活动显示器的当前模式高度大于 `1440` 时，自动设置为 `200%` 缩放；`1440p` 及以下保持 `100%`。这个脚本依赖：
 
