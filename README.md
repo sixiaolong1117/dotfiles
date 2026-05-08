@@ -1,6 +1,6 @@
 # Dotfiles
 
-个人使用的配置文件，包含 zsh、Powerlevel10k、AeroSpace、WezTerm、Windows Terminal 和 Oh My Posh。
+个人使用的配置文件，包含 zsh、Powerlevel10k、AeroSpace、Sway、WezTerm、Windows Terminal 和 Oh My Posh。
 
 仓库里的配置文件使用不带点的可见文件名，方便在编辑器和文件管理器里浏览。实际使用时，再把它们链接到各个程序在用户目录下需要读取的隐藏配置路径。
 
@@ -12,6 +12,7 @@
 | Powerlevel10k | `zsh/p10k.zsh` | `~/.p10k.zsh` | `~/.p10k.zsh` | 不适用 |
 | WezTerm | `wezterm/wezterm.lua` | `~/.wezterm.lua` | `~/.wezterm.lua` | 不适用 |
 | AeroSpace | `AeroSpace/aerospace.toml` | `~/.aerospace.toml` | 不适用 | 不适用 |
+| Sway | `sway/` | 不适用 | `~/.config/sway` | 不适用 |
 | Windows Terminal | `WindowsTerminal/settings.json` | 不适用 | 不适用 | 手动配置 |
 | Oh My Posh | `oh-my-posh/sixiaolong.omp.json` | 不适用 | 不适用 | `$HOME\sixiaolong.omp.json` |
 
@@ -30,6 +31,13 @@
 ```sh
 ./install-linux.sh
 ```
+
+Linux 安装脚本会链接 zsh、Powerlevel10k、WezTerm 和 Sway 配置。Sway 配置会链接整个 `sway/` 目录到 `~/.config/sway`。
+
+Sway 配置包含一个自动缩放脚本：当活动显示器的当前模式高度大于 `1440` 时，自动设置为 `200%` 缩放；`1440p` 及以下保持 `100%`。这个脚本依赖：
+
+- Sway 自带的 `swaymsg`
+- `jq`
 
 AeroSpace 是 macOS 窗口管理器，所以 `AeroSpace/aerospace.toml` 在 Linux 下不需要链接。
 
