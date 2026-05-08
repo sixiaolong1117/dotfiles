@@ -12,7 +12,7 @@
 | Powerlevel10k | `zsh/p10k.zsh` | `~/.p10k.zsh` | `~/.p10k.zsh` | 不适用 |
 | WezTerm | `wezterm/wezterm.lua` | `~/.wezterm.lua` | `~/.wezterm.lua` | 不适用 |
 | NeoVim | `nvim/` | `~/.config/nvim` | `~/.config/nvim` | 不适用 |
-| AeroSpace | `AeroSpace/aerospace.toml` | `~/.aerospace.toml` | 不适用 | 不适用 |
+| AeroSpace | `AeroSpace/aerospace.toml` | `~/.config/aerospace/aerospace.toml` | 不适用 | 不适用 |
 | Sway | `sway/` | 不适用 | `~/.config/sway` | 不适用 |
 | Windows Terminal | `WindowsTerminal/settings.json` | 不适用 | 不适用 | 手动配置 |
 | Oh My Posh | `oh-my-posh/sixiaolong.omp.json` | 不适用 | 不适用 | `$HOME\sixiaolong.omp.json` |
@@ -24,6 +24,8 @@
 ```sh
 ./install-macos.sh
 ```
+
+macOS 安装脚本会链接 zsh、Powerlevel10k、WezTerm、NeoVim 和 AeroSpace 配置。AeroSpace 使用 `~/.config/aerospace/aerospace.toml`；如果旧的 `~/.aerospace.toml` 仍然存在，脚本会删除旧符号链接，或把普通文件备份为 `*.before-dotfiles-时间戳`，避免 AeroSpace 同时发现两个配置路径时报 `Ambiguous config error`。
 
 ## Linux
 

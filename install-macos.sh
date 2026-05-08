@@ -24,11 +24,31 @@ link_file() {
   printf '已链接: %s -> %s\n' "$target_path" "$source_path"
 }
 
+remove_legacy_aerospace_config() {
+  legacy_path="$HOME/.aerospace.toml"
+
+  if [ ! -e "$legacy_path" ] && [ ! -L "$legacy_path" ]; then
+    return
+  fi
+
+  if [ -L "$legacy_path" ]; then
+    rm "$legacy_path"
+    printf '已删除旧 AeroSpace 链接: %s\n' "$legacy_path"
+    return
+  fi
+
+  backup_path="$legacy_path.before-dotfiles-$timestamp"
+  mv "$legacy_path" "$backup_path"
+  printf '已备份旧 AeroSpace 配置: %s -> %s\n' "$legacy_path" "$backup_path"
+}
+
 link_file "$repo_dir/zsh/zshrc" "$HOME/.zshrc"
 link_file "$repo_dir/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 link_file "$repo_dir/wezterm/wezterm.lua" "$HOME/.wezterm.lua"
 mkdir -p "$HOME/.config"
 link_file "$repo_dir/nvim" "$HOME/.config/nvim"
-link_file "$repo_dir/AeroSpace/aerospace.toml" "$HOME/.aerospace.toml"
+mkdir -p "$HOME/.config/aerospace"
+remove_legacy_aerospace_config
+link_file "$repo_dir/AeroSpace/aerospace.toml" "$HOME/.config/aerospace/aerospace.toml"
 
 printf 'macOS 配置链接完成。\n'
