@@ -118,3 +118,16 @@ source $ZSH/oh-my-zsh.sh
 
 # Created by `pipx` on 2026-05-08 17:36:13
 export PATH="$PATH:/Users/sixiaolong/.local/bin"
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+
+# Intel/Rosetta Homebrew
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+# Intel/Rosetta Wine
+alias iwine='arch -x86_64 /usr/local/bin/wine'
+alias iwinecfg='arch -x86_64 /usr/local/bin/winecfg'
+alias iwineboot='arch -x86_64 /usr/local/bin/wineboot'
+alias iwineserver='arch -x86_64 /usr/local/bin/wineserver'
+alias iregedit='arch -x86_64 /usr/local/bin/regedit'
+alias imsiexec='arch -x86_64 /usr/local/bin/msiexec'
+alias iwinetricks="WINEPREFIX=\"$HOME/Games/wineprefixes/steam\" arch -x86_64 /usr/local/bin/winetricks"
