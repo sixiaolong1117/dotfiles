@@ -36,10 +36,17 @@ function Link-File {
   Write-Host "已链接: $TargetPath -> $SourcePath"
 }
 
+# oh-my-posh
 $ohMyPoshConfig = Join-Path $HOME "sixiaolong.omp.json"
-
 Link-File `
   -SourcePath (Join-Path $repoDir "oh-my-posh\sixiaolong.omp.json") `
   -TargetPath $ohMyPoshConfig
+
+# Windows Terminal
+$wtLocalState = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+$wtSettings = Join-Path $wtLocalState "settings.json"
+Link-File `
+  -SourcePath (Join-Path $repoDir "WindowsTerminal\settings.json") `
+  -TargetPath $wtSettings
 
 Write-Host "Windows 配置链接完成。"
