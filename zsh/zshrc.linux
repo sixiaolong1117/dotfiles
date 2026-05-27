@@ -1,0 +1,17 @@
+# Linux-specific zsh configuration
+
+# Linux-specific aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Linux-specific environment variables
+export EDITOR='vim'
+export VISUAL='vim'
+
+# Linux-specific PATH additions
+export PATH="$PATH:$HOME/.local/bin"
+
+# Linux-specific functions
+# Add any Linux-specific functions here

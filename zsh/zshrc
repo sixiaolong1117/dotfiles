@@ -116,18 +116,14 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Created by `pipx` on 2026-05-08 17:36:13
-export PATH="$PATH:/Users/sixiaolong/.local/bin"
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
+# Load OS-specific configuration
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Documents/GitHub/dotfiles}"
 
-# Intel/Rosetta Homebrew
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
-
-# Intel/Rosetta Wine
-alias iwine='arch -x86_64 /usr/local/bin/wine'
-alias iwinecfg='arch -x86_64 /usr/local/bin/winecfg'
-alias iwineboot='arch -x86_64 /usr/local/bin/wineboot'
-alias iwineserver='arch -x86_64 /usr/local/bin/wineserver'
-alias iregedit='arch -x86_64 /usr/local/bin/regedit'
-alias imsiexec='arch -x86_64 /usr/local/bin/msiexec'
-alias iwinetricks="WINEPREFIX=\"$HOME/Games/wineprefixes/steam\" arch -x86_64 /usr/local/bin/winetricks"
+case "$(uname -s)" in
+    Linux*)
+        [[ -f "$DOTFILES_DIR/zsh/zshrc.linux" ]] && source "$DOTFILES_DIR/zsh/zshrc.linux"
+        ;;
+    Darwin*)
+        [[ -f "$DOTFILES_DIR/zsh/zshrc.macos" ]] && source "$DOTFILES_DIR/zsh/zshrc.macos"
+        ;;
+esac

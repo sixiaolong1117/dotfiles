@@ -1,0 +1,32 @@
+# macOS-specific zsh configuration
+
+# macOS-specific aliases
+alias ls='ls -G'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Intel/Rosetta Homebrew
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+# Intel/Rosetta Wine
+alias iwine='arch -x86_64 /usr/local/bin/wine'
+alias iwinecfg='arch -x86_64 /usr/local/bin/winecfg'
+alias iwineboot='arch -x86_64 /usr/local/bin/wineboot'
+alias iwineserver='arch -x86_64 /usr/local/bin/wineserver'
+alias iregedit='arch -x86_64 /usr/local/bin/regedit'
+alias imsiexec='arch -x86_64 /usr/local/bin/msiexec'
+alias iwinetricks="WINEPREFIX=\"$HOME/Games/wineprefixes/steam\" arch -x86_64 /usr/local/bin/winetricks"
+
+# macOS-specific environment variables
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# macOS-specific PATH additions
+export PATH="$PATH:/Users/sixiaolong/.local/bin"
+
+# macOS-specific functions
+# Add any macOS-specific functions here
+
+# macOS-specific settings
+hidutil property --set '{"CapsLockDelayOverride":0}' > /dev/null 2>&1
