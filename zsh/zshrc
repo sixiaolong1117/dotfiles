@@ -127,3 +127,5 @@ case "$(uname -s)" in
         [[ -f "$DOTFILES_DIR/zsh/zshrc.macos" ]] && source "$DOTFILES_DIR/zsh/zshrc.macos"
         ;;
 esac
+# mimocode
+export PATH=/Users/sixiaolong/.mimocode/bin:$PATH
