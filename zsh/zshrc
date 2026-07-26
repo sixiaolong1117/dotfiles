@@ -129,3 +129,9 @@ case "$(uname -s)" in
 esac
 # mimocode
 export PATH=/Users/sixiaolong/.mimocode/bin:$PATH
+
+export VCPKG_ROOT=~/vcpkg
+export VK_ICD_FILENAMES=/opt/homebrew/etc/vulkan/icd.d/MoltenVK_icd.json
+
+# opencode
+export PATH=/Users/sixiaolong/.opencode/bin:$PATH
