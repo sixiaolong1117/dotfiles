@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "agent": {
+    "plan": {
+      "description": "DeepSeek V4 Pro：负责推理、架构设计",
+      "mode": "primary",
+      "model": "opencode-go/deepseek-v4-pro",
+      "color": "#f97316"
+    },
+
+    "build": {
+      "description": "DeepSeek V4 Flash：负责代码编写",
+      "mode": "primary",
+      "model": "opencode-go/deepseek-v4-flash",
+      "color": "#3b82f6"
+    },
+
+    "review": {
+      "description": "MiMo 2.5 Pro：负责代码审查",
+      "mode": "primary",
+      "model": "opencode-go/mimo-v2.5-pro",
+      "color": "#22c55e",
+      "permission": {
+        "edit": "deny",
+        "write": "deny"
+      }
+    }
+  }
+}
