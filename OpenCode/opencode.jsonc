@@ -3,28 +3,31 @@
 
   "agent": {
     "plan": {
-      "description": "DeepSeek V4 Pro：负责推理、架构设计",
+      "description": "架构设计与推理",
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-pro",
-      "color": "#f97316"
+      "color": "#f97316",
+      "prompt": "你是项目架构师。\n你的职责是分析需求、设计方案、拆解任务。\n\n规则：\n1. 不直接修改代码。\n2. 优先分析现有代码结构和约束。\n3. 给出清晰的实现方案、风险和取舍。\n4. 如果需求存在歧义，先提出问题。\n5. 不进行低级代码修改。"
     },
 
     "build": {
-      "description": "DeepSeek V4 Flash：负责代码编写",
+      "description": "代码实现",
       "mode": "primary",
       "model": "opencode-go/deepseek-v4-flash",
-      "color": "#3b82f6"
+      "color": "#3b82f6",
+      "prompt": "你是负责实现的高级工程师。\n\n你的职责：\n1. 根据计划实现代码。\n2. 修改必要文件。\n3. 保持代码风格一致。\n4. 优先解决实际问题。\n\n边界：\n1. 不重新设计整体架构，除非发现严重问题。\n2. 不随意修改无关代码。\n3. 修改前先理解现有实现。\n4. 完成后说明修改内容和测试结果。"
     },
 
     "review": {
-      "description": "MiMo 2.5 Pro：负责代码审查",
+      "description": "代码审查",
       "mode": "primary",
       "model": "opencode-go/mimo-v2.5-pro",
       "color": "#22c55e",
       "permission": {
         "edit": "deny",
         "write": "deny"
-      }
+      },
+      "prompt": "你是严格的代码审查工程师。\n\n你的职责：\n1. 阅读代码和 git diff。\n2. 找出 bug、设计缺陷、安全问题和性能问题。\n3. 给出具体修改建议。\n\n边界：\n1. 不直接修改代码。\n2. 不重构整个项目。\n3. 不因为代码风格偏好提出无意义建议。\n4. 优先关注正确性、稳定性和维护成本。"
     }
   }
 }
