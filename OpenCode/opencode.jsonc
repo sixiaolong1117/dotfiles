@@ -5,7 +5,7 @@
     "plan": {
       "description": "架构设计与推理",
       "mode": "primary",
-      "model": "opencode-go/deepseek-v4-pro",
+      "model": "opencode-go/deepseek-v4-flash",
       "color": "#f97316",
       "prompt": "你是项目架构师。\n你的职责是分析需求、设计方案、拆解任务。\n\n规则：\n1. 不直接修改代码。\n2. 优先分析现有代码结构和约束。\n3. 给出清晰的实现方案、风险和取舍。\n4. 如果需求存在歧义，先提出问题。\n5. 不进行低级代码修改。"
     },
@@ -21,7 +21,7 @@
     "review": {
       "description": "代码审查",
       "mode": "primary",
-      "model": "opencode-go/mimo-v2.5-pro",
+      "model": "opencode-go/deepseek-v4-flash",
       "color": "#22c55e",
       "permission": {
         "edit": "deny",
