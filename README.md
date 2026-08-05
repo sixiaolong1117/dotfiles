@@ -16,6 +16,7 @@
 | Sway | `sway/` | 不适用 | `~/.config/sway` | 不适用 |
 | Windows Terminal | `WindowsTerminal/settings.json` | 不适用 | 不适用 | 手动配置 |
 | Oh My Posh | `oh-my-posh/sixiaolong.omp.json` | 不适用 | 不适用 | `$HOME\sixiaolong.omp.json` |
+| OpenCode | `OpenCode/opencode.jsonc` | `~/.config/opencode/opencode.jsonc` | `~/.config/opencode/opencode.jsonc` | `$HOME\.config\opencode\opencode.jsonc` |
 
 ## macOS
 
@@ -78,3 +79,26 @@ oh-my-posh init pwsh --config "$HOME\sixiaolong.omp.json" | Invoke-Expression
 - 如果目标位置是普通文件或目录，会先移动为 `*.before-dotfiles-时间戳` 备份文件，再创建新链接。
 
 完成链接后，在这个仓库里修改配置文件，用户目录下对应的配置会同步生效。
+
+## OpenCode 配置同步
+
+OpenCode 的配置按字段合并，而不是整文件覆盖：
+
+- 仓库和本机相同的字段，用仓库的值覆盖本机。
+- 本机多出来的字段（例如机器相关的 `plugin` 路径）保留。
+- 仓库多出来的字段插入到本机。
+- 覆盖前会把本机配置备份为 `opencode.jsonc.bak-时间戳`。
+
+macOS / Linux：
+
+```sh
+./OpenCode/sync-opencode.sh
+```
+
+Windows：
+
+```powershell
+.\OpenCode\sync-opencode.ps1
+```
+
+依赖 `python3`。合并会重新序列化 JSON，本机配置文件里的注释会被移除。
