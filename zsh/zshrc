@@ -133,7 +133,14 @@ export PATH=/Users/sixiaolong/.mimocode/bin:$PATH
 export VCPKG_ROOT=~/vcpkg
 # RRF: LunarG SDK exposes both KosmicKrisp + MoltenVK ICDs; the app prefers
 # KosmicKrisp by driverID and falls back automatically (--vulkan-driver= to switch).
-source ~/VulkanSDK/1.4.363.0/setup-env.sh
+# ponytail: inline instead of sourcing setup-env.sh; the script echoes during
+# init and trips Powerlevel10k instant prompt. Pure exports print nothing.
+export VULKAN_SDK=$HOME/VulkanSDK/1.4.363.0/macOS
+export PATH="$PATH:$VULKAN_SDK/bin"
+export DYLD_LIBRARY_PATH="$VULKAN_SDK/lib:${DYLD_LIBRARY_PATH:-}"
+export VK_ADD_LAYER_PATH="$VULKAN_SDK/share/vulkan/explicit_layer.d"
+export VK_ICD_FILENAMES="$VULKAN_SDK/share/vulkan/icd.d/"
+export VK_DRIVER_FILES="$VULKAN_SDK/share/vulkan/icd.d/"
 
 # opencode
 export PATH=/Users/sixiaolong/.opencode/bin:$PATH
