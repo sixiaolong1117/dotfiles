@@ -160,3 +160,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
